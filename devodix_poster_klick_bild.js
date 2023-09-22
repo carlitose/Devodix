@@ -1,0 +1,1 @@
+document.querySelector('input[name=add_photo_done]').click();

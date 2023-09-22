@@ -1,0 +1,71 @@
+{
+  "manifest_version": 3,
+  "name": "Devodix 2.0",
+  "description": "Devodix 2.0 der beste & sicherste Autoposter | Robin Focke Marketing®",
+  "author": "Robin Focke",
+  "version": "1.3",
+  "icons": {
+    "16": "images/icons/default.png",
+    "48": "images/icons/default.png",
+    "128": "images/icons/default.png"
+  },
+  
+  
+  "action": {
+        "default_popup": "start_page.html",
+        "default_icon": {
+         "16": "images/icons/default.png",
+    "48": "images/icons/default.png",
+    "128": "images/icons/default.png"
+        }
+    },
+  
+  
+  "permissions": [
+    "webRequest",
+    "declarativeNetRequest",
+    "tabs",
+    "storage",
+	"bookmarks",
+	"scripting",
+	"webNavigation",
+	"activeTab",
+	"unlimitedStorage",
+	"background"
+	
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  
+  
+  "web_accessible_resources": [{
+  "resources": ["js/myq.js"],
+  "matches": ["*://*/*"]
+}],
+  
+  
+   "background": {
+    "service_worker": "js/background.js"
+	
+  },
+  
+  
+
+"content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/myq.js","js/poster.js"
+      ]
+    }
+  ]
+
+
+
+}
